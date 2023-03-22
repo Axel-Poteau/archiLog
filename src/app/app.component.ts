@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Datas } from './mock-datas';
+import {Personne} from "./personne";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gestion-depense';
+  data = Datas.getInstance();
+  personne:Personne[];
+
+  constructor() {
+    this.personne = this.data.generePersonnes(10);
+
+  }
+
+
 }
