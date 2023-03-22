@@ -292,6 +292,12 @@
       right: 120px;
       transform: rotate(-5deg);
     }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh
+    }
   }
 
   @media screen and (max-width: 575px) {
@@ -372,4 +378,11 @@
   </li>
 </ul>
 
-<router-outlet></router-outlet>
+<div class="container">
+
+  <!-- La liste des personnes -->
+
+  <router-outlet></router-outlet>
+  <app-show-messages *ngIf="!noMessage()"></app-show-messages>
+
+</div>

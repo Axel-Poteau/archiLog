@@ -13,4 +13,7 @@ export class MessagesService {
   clear(): void {
     this.messages = [];
   }
+  isEmpty(): boolean{
+    return this.messages.length==0
+  }
 }

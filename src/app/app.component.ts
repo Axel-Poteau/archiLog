@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Datas } from './mock-datas';
 import {Personne} from "./personne";
+import {MessagesService} from "./message.service";
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,15 @@ export class AppComponent {
   data = Datas.getInstance();
   personne:Personne[];
 
-  constructor() {
+
+
+  constructor(private messageService: MessagesService) {
     this.personne = this.data.generePersonnes(10);
-
+    this.messageService.add('test test')
   }
-
+  noMessage(): boolean{
+    console.log(this.messageService.isEmpty())
+    return this.messageService.isEmpty();
+  }
 
 }
