@@ -1,0 +1,30 @@
+<div class="container">
+  <form [formGroup]="formulaire">
+    <mat-form-field>
+      <input matInput
+             placeholder="Adresse Mail"
+             formControlName="email">
+    </mat-form-field>
+    <div class="ligne">
+      <div class="ligne">champ email valide ?</div>
+    </div>
+    <div class="ligne">
+      <div class="p-col" [class]="email?.valid ? 'ok' : 'erreur'">email.valid</div>
+      <div class="p-col" [class]="email?.invalid ? 'ok' : 'erreur'">email.invalid</div>
+    </div>
+
+    <div class="ligne">champ email visité ?</div>
+
+    <div class="ligne">
+      <div class="p-col" [class]="email?.touched ? 'ok' : 'erreur'">email.touched</div>
+      <div class="p-col" [class]="email?.untouched ? 'ok' : 'erreur'">email.untouched</div>
+    </div>
+
+    <div class="ligne">champ email changé ?</div>
+
+    <div class="ligne">
+      <div class="p-col" [class]="email?.dirty ? 'ok' : 'erreur'">email.dirty</div>
+      <div class="p-col" [class]="email?.pristine ? 'ok' : 'erreur'">email.pristine</div>
+    </div>
+  </form>
+</div>

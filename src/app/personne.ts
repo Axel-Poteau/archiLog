@@ -6,4 +6,7 @@ export interface Personne {
   prenom: string;
   plafond: number;
   depenses: Depense[];
+
+
+
 }

@@ -10,13 +10,12 @@ import {MessagesService} from "./message.service";
 })
 export class AppComponent {
   title = 'gestion-depense';
-  data = Datas.getInstance();
-  personne:Personne[];
+
 
 
 
   constructor(private messageService: MessagesService) {
-    this.personne = this.data.generePersonnes(10);
+
     this.messageService.add('test test')
   }
   noMessage(): boolean{
